@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log/slog"
+	"log"
 	"net/http"
 )
 
@@ -21,7 +21,7 @@ func main() {
 		user := r.Form.Get("user")
 		pw := r.Form.Get("password")
 
-		slog.Info("Registering new user %s with password %s.\n", user, pw)
+		log.Printf("Registering new user %s with password %s.\n", user, pw)
 	})
 
 	err := http.ListenAndServe(":8080", nil)
